@@ -1,1 +1,1 @@
-web: chat-golang -port=$PORT
+web: main

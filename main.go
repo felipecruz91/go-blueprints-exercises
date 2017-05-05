@@ -1,9 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 	"path/filepath"
 	"sync"
 )
@@ -25,6 +27,17 @@ func (t *templateHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	t.templ.Execute(w, nil)
 }
 
+// Get the Port from the environment so we can run on Heroku
+func GetPort() string {
+	var port = os.Getenv("PORT")
+	// Set a default port if there is nothing in the environment
+	if port == "" {
+		port = "4747"
+		fmt.Println("INFO: No PORT environment variable detected, defaulting to " + port)
+	}
+	return ":" + port
+}
+
 func main() {
 	r := newRoom()
 	// root
@@ -35,7 +48,7 @@ func main() {
 	// allowing our main thread to run the web server
 	go r.run()
 	// start the web server
-	if err := http.ListenAndServe(":5000", nil); err != nil {
+	if err := http.ListenAndServe(GetPort(), nil); err != nil {
 		log.Fatal("ListenAndServer:", err)
 	}
 }
