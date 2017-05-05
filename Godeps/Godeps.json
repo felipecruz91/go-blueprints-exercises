@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/felipecruz91/go-blueprints-exercises/chat",
+	"ImportPath": "github.com/felipecruz91/go-blueprints-exercises/chat-golang",
 	"GoVersion": "go1.8",
 	"GodepVersion": "v79",
 	"Deps": [
