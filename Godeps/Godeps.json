@@ -1,0 +1,12 @@
+{
+	"ImportPath": "github.com/felipecruz91/go-blueprints-exercises/chat",
+	"GoVersion": "go1.8",
+	"GodepVersion": "v79",
+	"Deps": [
+		{
+			"ImportPath": "github.com/gorilla/websocket",
+			"Comment": "v1.1.0-29-ga91eba7",
+			"Rev": "a91eba7f97777409bc2c443f5534d41dd20c5720"
+		}
+	]
+}
