@@ -41,7 +41,7 @@
             if (!window["WebSocket"]) {
                 alert("Error: Your browser does not support websockets.")
             } else {
-                socket = new WebSocket("ws://localhost:4747/room");
+                socket = new WebSocket("ws://chat-golang.herokuapp.com:4747/room");
                 socket.onclose = function () {
                     alert("Connection has been closed.");
                 }
